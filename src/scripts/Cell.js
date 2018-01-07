@@ -1,18 +1,18 @@
 class Cell {
 
   constructor () {
-    this.cell = document.createElement('div');
+    this.htmlNode = document.createElement('div');
     this.attempted = false;
     this.correspondingShip = null;
 
-    this.cell.className = 'cell';
-    this.cell.append(String.fromCharCode(0x000A0));
-    this.cell.addEventListener('click', this.attemptCell.bind(this));
+    this.htmlNode.className = 'cell';
+    this.htmlNode.append(String.fromCharCode(0x000A0));
+    this.htmlNode.addEventListener('click', this.attemptCell.bind(this));
   }
 
   attemptCell () {
     this.attempted = true;
-    this.cell.innerHTML = this.correspondingShip ? 'X' : String.fromCharCode(0x000B7);
+    this.htmlNode.innerHTML = this.correspondingShip ? 'X' : String.fromCharCode(0x000B7);
   }
 
 }
