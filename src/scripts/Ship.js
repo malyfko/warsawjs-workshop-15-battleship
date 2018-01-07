@@ -30,7 +30,7 @@ class Ship {
     ship.map((compartment) => {
       surroundPoints.map((surPoint) => {
         let p = compartment.add(surPoint);
-        if (surroundingsString.indexOf(p.toString()) === -1 && shipString.indexOf(p.toString()) === -1 && p.isOnField()) {
+        if (surroundingsString.includes(p.toString()) && shipString.includes(p.toString()) && p.isOnField()) {
           surroundingsString.push((p).toString());
           surroundings.push(p);
         }
